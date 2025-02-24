@@ -1,0 +1,11 @@
+services:
+  sii:
+    container_name: lisp
+    build: .
+    volumes:
+      - ./scripts:/scripts
+    stdin_open: true # Mantém o container aberto
+    tty: true # Habilita um terminal interativo
+    command: ["tail", "-f", "/dev/null"] # Mantém o container aberto
+    # command: ["sbcl"] # Sobrescreve o comando padrão do container definido no Dockerfile
+
